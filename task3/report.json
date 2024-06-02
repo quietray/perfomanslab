@@ -1,0 +1,21 @@
+{
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "value": 10
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "value": 20,
+            "subtests": [
+                {
+                    "id": 3,
+                    "name": "Subtest 1",
+                    "value": 30
+                }
+            ]
+        }
+    ]
+}
