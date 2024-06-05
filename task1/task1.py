@@ -1,15 +1,26 @@
 import sys
 
-def main(args):
-  if len(args) != 2: return print("Expected 2 args")
-  x, n, m = 1, int(args[0]), int(args[1]) - 1
-  #print(x, n, m)
-  
-  while True:
-    print(x, end="")
-    x = x + m - n if x + m > n else x + m
-    if x == 1:
-      break
+def generate_circular_path(n, m):
+    circular_array = list(range(1, n + 1))
+    path = []
+    current_index = 0
 
-if __name__ == "__main__":
-  main(sys.argv[1:])
+    while True:
+        path.append(circular_array[current_index])
+        next_index = (current_index + m - 1) % n
+        if next_index == 0:
+            break
+        current_index = next_index
+
+    return ''.join(map(str, path))
+
+if name == "__main__":
+    if len(sys.argv) != 3:
+        print("incorrect input, expected 2 args")
+        sys.exit(1)
+
+    n = int(sys.argv[1])
+    m = int(sys.argv[2])
+
+    result = generate_circular_path(n, m)
+    print(result)
